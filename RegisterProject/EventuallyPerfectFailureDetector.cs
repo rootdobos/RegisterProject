@@ -14,6 +14,10 @@ namespace RegisterProject
             _Suspected = new List<string>();
             _Delay = delay;
         }
+        public void Timeout()
+        {
+          //  if()
+        }
         List<string> _Alive;
         List<string> _Suspected;
         double _Delay;

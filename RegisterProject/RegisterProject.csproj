@@ -45,6 +45,7 @@
     <Compile Include="EventualLeaderDetector.cs" />
     <Compile Include="EventuallyPerfectFailureDetector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
