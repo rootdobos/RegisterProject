@@ -23,5 +23,12 @@ namespace RegisterProject
                     intersection.Add(element);
             return intersection;
         }
+        public static List<string> Clone(List<string> list)
+        {
+            List<string> clone = new List<string>();
+            foreach (string element in list)
+                clone.Add(element);
+            return clone;
+        }
     }
 }
