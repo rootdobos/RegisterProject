@@ -8,6 +8,11 @@ namespace RegisterProject
 {
     public class EventuallyPerfectFailureDetector
     {
+        public List<string> Suspected
+        { get { return _Suspected; } }
+        public List<string> Processes
+        { get { return _Processes; } }
+
         public EventuallyPerfectFailureDetector(List<string> processes,double deltaTime)
         {
             _Processes = processes;
@@ -27,7 +32,7 @@ namespace RegisterProject
                     _Suspected.Add(process);
                 else if (_Alive.Contains(process) && _Suspected.Contains(process))
                     _Suspected.Remove(process);
-                //trigger HeartbeatRequest
+                //trigger send HeartbeatRequest
             }
             _Alive.Clear();
             //starttimer

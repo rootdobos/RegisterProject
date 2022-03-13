@@ -30,5 +30,15 @@ namespace RegisterProject
                 clone.Add(element);
             return clone;
         }
+        public static List<string> Sustraction(List<string> list1, List<string> list2)
+        {
+            List<string> result = new List<string>();
+            foreach(string element in list1)
+            {
+                if (!list2.Contains(element))
+                    result.Add(element);
+            }
+            return result;
+        }
     }
 }

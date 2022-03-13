@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace RegisterProject
 {
-    class EventualLeaderDetector
+    public class EventualLeaderDetector
     {
+        public EventuallyPerfectFailureDetector EventuallyPerfectFailureDetector
+        { set { _EPFD = value; } }
+
+        public EventualLeaderDetector()
+        {
+            _Leader = "";
+        }
+
+        public void ChangeLeader()
+        {
+            _Leader = Utilities.Sustraction(_EPFD.Processes, _EPFD.Suspected)[0];
+            //trigger trust leader
+        }
+
+        private EventuallyPerfectFailureDetector _EPFD;
+        string _Leader;
     }
 }
