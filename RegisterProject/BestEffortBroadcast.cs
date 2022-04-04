@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using Google.Protobuf.Communication;
 namespace RegisterProject
 {
     public class BestEffortBroadcast
     {
-        public BestEffortBroadcast(List<string> processes)
+        public BestEffortBroadcast(List<ProcessId> processes)
         {
             _Processes = processes;
         }
         public void Broadcast(string message)
         {
-            foreach (string process in _Processes)
+            foreach (ProcessId process in _Processes)
                 ;//Send process,message
         }
         //Deliver process message
-        List<string> _Processes;
+        List<ProcessId> _Processes;
     }
 }

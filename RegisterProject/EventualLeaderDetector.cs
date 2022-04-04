@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Google.Protobuf.Communication;
 
 namespace RegisterProject
 {
@@ -13,7 +14,7 @@ namespace RegisterProject
 
         public EventualLeaderDetector()
         {
-            _Leader = "";
+            _Leader = null;
         }
 
         public void ChangeLeader()
@@ -23,6 +24,6 @@ namespace RegisterProject
         }
 
         private EventuallyPerfectFailureDetector _EPFD;
-        string _Leader;
+        ProcessId _Leader;
     }
 }
