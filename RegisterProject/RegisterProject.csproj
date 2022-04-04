@@ -63,6 +63,7 @@
     <Compile Include="CommunicationMessages.cs" />
     <Compile Include="EventualLeaderDetector.cs" />
     <Compile Include="EventuallyPerfectFailureDetector.cs" />
+    <Compile Include="PerfectLink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
