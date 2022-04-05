@@ -17,6 +17,12 @@ namespace Application
         {
             _PerfectLink = new PerfectLink("127.0.0.1", 5000,5005);
             Message m = new Message();
+            m.Type = Message.Types.Type.NetworkMessage;
+            m.NetworkMessage = new NetworkMessage();
+            m.NetworkMessage.SenderListeningPort = 5005;
+            m.NetworkMessage.Message = new Message();
+            m.NetworkMessage.Message.Type = Message.Types.Type.ProcRegistration;
+            m.NetworkMessage.Message.ProcRegistration = new ProcRegistration();
             await _PerfectLink.TCPSend(m);
             Console.ReadKey();
         }

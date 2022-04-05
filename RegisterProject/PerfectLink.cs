@@ -16,6 +16,7 @@ namespace RegisterProject
             IPAddress ip = System.Net.IPAddress.Parse(hostIP);
             IPEndPoint myEndPoint = new IPEndPoint(ip, myPort);
             _Client = new TcpClient(myEndPoint);
+            _Client.NoDelay = true;
             _Client.ConnectAsync(hostIP, hubPort);
             TCPDeliver();
         }
@@ -43,7 +44,9 @@ namespace RegisterProject
         public async Task TCPSend(Message message)
         {
             NetworkStream stream = _Client.GetStream();
-            
+            //byte[] messageArray = message.ToByteArray();
+            //stream.Write(messageArray, 0, messageArray.Length);
+
             message.WriteTo(stream);
             Console.WriteLine("Dummy message sent");
         }
