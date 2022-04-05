@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using Google.Protobuf.Communication;
-using System.Threading.Tasks;
 namespace RegisterProject
 {
     public class BestEffortBroadcast
@@ -29,12 +28,13 @@ namespace RegisterProject
         public void DeliverFunction(object sender, PerfectLinkDeliverEventArgs e)
         {
 
-
             EventHandler<BEBDeliverEventArgs> handler = Deliver;
             BEBDeliverEventArgs args = new BEBDeliverEventArgs();
             BebDeliver bebArgs = new BebDeliver()
-                {Sender=e.DeliverMessage.Sender,
-                Message=e.DeliverMessage.Message};
+            {
+                Sender = e.DeliverMessage.Sender,
+                Message = e.DeliverMessage.Message
+            };
             args.DeliverMessage = bebArgs;
             handler?.Invoke(this, args);
         }
@@ -42,6 +42,7 @@ namespace RegisterProject
         PerfectLink _PerfectLink;
 
     }
+
     public class BEBDeliverEventArgs : EventArgs
     {
         public BebDeliver DeliverMessage { get; set; }

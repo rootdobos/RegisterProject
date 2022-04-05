@@ -6,3 +6,4 @@
 .vs/RegisterProject/v15/Server/sqlite3/storage.ide-wal
 RegisterProject/bin/*
 RegisterProject/obj/*
+packages/*
